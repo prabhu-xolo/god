@@ -59,11 +59,11 @@ $(document).ready(function () {
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
-            document.title = "Siva | Portfolio";
+            document.title = "prabhu | Portfolio";
             $("#favicon").attr("href", "assets/images/profile-icon-vector.jpg");
         }
         else {
-            document.title = "Siva | Portfolio";
+            document.title = "prabhu | Portfolio";
             $("#favicon").attr("href", "assets/images/profile-icon-vector.jpg");
         }
     });
@@ -104,27 +104,6 @@ function showSkills(skills) {
     skillsContainer.innerHTML = skillHTML;
 }
 
-function showProjects(projects) {
-    let projectsContainer = document.querySelector("#work .box-container");
-    let projectHTML = "";
-    projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
-        projectHTML += `
-        <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
-      <div class="content">
-        <div class="tag">
-        <h3>${project.name}</h3>
-        </div>
-        <div class="desc">
-          <p>${project.desc}</p>
-          <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>`
-    });
     projectsContainer.innerHTML = projectHTML;
 
     // <!-- tilt js effect starts -->
@@ -248,4 +227,5 @@ srtop.reveal('.experience .timeline .container', { interval: 400 });
 
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
+
 srtop.reveal('.contact .container .form-group', { delay: 400 });
